@@ -1,28 +1,23 @@
-﻿using SistemaEstaciones_Principal.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaEstaciones_Principal.DAL
+namespace SistemaEstaciones_DAL
 {
     public class EstacionDAL
     {
         private static List<Estacion> estaciones = new List<Estacion>();
 
-        //static void Main()
-        //{
-        //}
-
-        public void Add(Estacion e)
+        public void Add(Estacion es)
         {
-            estaciones.Add(e);
+            estaciones.Add(es);
         }
 
         public void Remove(int idEstacion)
         {
-            Estacion estacion = estaciones.Find(e => e.IdEstacion == idEstacion);
+            Estacion estacion = estaciones.Find(es => es.IdEstacion == idEstacion);
             estaciones.Remove(estacion);
         }
 
@@ -33,7 +28,7 @@ namespace SistemaEstaciones_Principal.DAL
 
         public List<Estacion> GetAll(int idEstacion)
         {
-            return estaciones.FindAll(e => e.IdEstacion == idEstacion);
+            return estaciones.FindAll(es => es.IdEstacion == idEstacion);
         }
 
     }
